@@ -12,6 +12,7 @@ EXECUTE.
 
 RECODE SDQ2_7 SDQ2_11 SDQ2_14 SDQ2_21 SDQ2_25 (2=0) (1=1) (0=2) INTO rSDQ2_07 rSDQ2_11 rSDQ2_14 rSDQ2_21 rSDQ2_25. 
 EXECUTE.
+
 *scale creation FOR SDQ 0.
 COMPUTE temotion_SDQ0 = RND(MEAN.3(SDQ0_3,SDQ0_8,SDQ0_13,SDQ0_16,SDQ0_24) * 5) .
 EXECUTE .
@@ -55,7 +56,7 @@ COMPUTE tebdtot_SDQ2 = SUM.4(temotion_SDQ2,tconduct_SDQ2,thyper_SDQ2,tpeer_SDQ2)
 EXECUTE .
 
 
-
+*group creation*
 IF  (ClassTeacher<5) Group=1.
 IF  (ClassTeacher>4) Group=2.
 EXECUTE.
